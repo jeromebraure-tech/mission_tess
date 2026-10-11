@@ -11,14 +11,16 @@ Jeu de multiplication en français, sans dépendances, pour téléphone et ordin
 ## Mettre à jour
 Modifier les fichiers dans le même dépôt, puis attendre la fin du déploiement GitHub Pages. Fermer et rouvrir l’application avec Internet : elle demande les fichiers récents avant de consulter sa copie hors ligne. Une partie déjà ouverte garde son code jusqu’à la prochaine ouverture. Aucun changement d’URL ni réinstallation nécessaire. Après une première ouverture en ligne, elle peut fonctionner hors ligne avec la dernière version téléchargée. Lors d’un changement de la liste des fichiers du cache, incrémenter CACHE dans sw.js.
 
-## Jeu
-- Tables 6 à 10 sélectionnées au départ ; multiplicateurs 1 à 10. Rappel des tables 2 à 5, sélection personnalisée.
-- Entraînement : 10 questions sans chrono. Défi : 120 secondes de temps de réponse actif, 18 / 12 / 8 secondes par bulle ; la lecture de la correction et les pauses arrêtent le chrono. La durée réelle peut donc dépasser deux minutes.
-- Réponse saisie sur pavé tactile ou clavier ; validation explicite. Correction après chaque tentative et bouton Continuer.
-- Les calculs avec erreurs sont davantage tirés au sort. Trois réponses correctes sans indice rendent un calcul « solide » ; une erreur ou une réponse avec indice remet sa série à zéro. Cet indicateur représente la progression dans le jeu, pas une évaluation scolaire.
-- Étoiles, objectif quotidien de 10 réponses correctes, record du défi (toutes vitesses et tables confondues). Pas de perte d’étoiles.
-- Sauvegarde locale uniquement : pas de compte ni transfert entre appareils. Effacer les données du navigateur efface la progression. Le jeu fonctionne aussi sans sauvegarde si celle-ci est bloquée.
-- Mise en pause quand on change d’onglet. Pas de publicité, suivi, sons ni données envoyées à un serveur applicatif.
+## Jeu v2
+- Tables 6 à 10 par défaut, rappel de 2 à 5, sélection personnalisée.
+- Cinq résultats uniques, dont exactement un correct. L’opération est en bas ; les bulles descendent en défi, restent fixes en entraînement.
+- Une seule tentative : +1 point si juste, −1 si faux ou si les bulles arrivent en bas. Le score peut être négatif.
+- Enchaînement automatique : 0,65 seconde après une bonne réponse ; 1,65 seconde après une erreur, avec la correction et la bonne bulle mise en évidence.
+- Entraînement de 10 calculs sans chrono. Défi de 120 secondes de jeu actif, avec vitesse 18 / 12 / 8 secondes par calcul. Corrections et pauses suspendent le chrono.
+- Interface de jeu dimensionnée à la hauteur disponible du téléphone, sans défilement. L’accueil peut défiler.
+- Calculs ratés plus fréquents ; trois réponses justes consécutives indiquent un calcul solide.
+- Progression conservée depuis la v1. Points et record remis à zéro au premier lancement v2 car le barème a changé.
+- Sauvegarde locale, pas de synchronisation entre appareils.
 
-## Fichiers
-Tout le style et la logique du jeu sont dans index.html. Les fichiers complémentaires servent à l’installation et au fonctionnement hors ligne. Pour essayer sans hébergement, ouvrir index.html : le jeu fonctionne, mais l’installation et le service worker demandent HTTPS (ou localhost).
+## Remplacer la v1
+Dans le même dépôt GitHub, Add file → Upload files : envoyer les fichiers de cette archive à la racine et Commit changes. Attendre le déploiement Pages, puis fermer et rouvrir le jeu avec Internet. Le numéro v2.0 sur l’accueil confirme la mise à jour. Le raccourci et l’URL restent identiques.
